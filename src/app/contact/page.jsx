@@ -15,4 +15,3 @@ const Contact = () => {
   );
 };
 export default Contact;
-g;
