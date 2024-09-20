@@ -19,7 +19,7 @@ const Homepage = () => {
           And help your business with a modern online presence.
         </p>
         {/* BUTTONS */}
-        <div className='flex gap-4 w-full'>
+        <div className='flex gap-4 w-fu'>
           <button className='p-4 rounded-lg ring-1 ring-black bg-black text-white'>
             View My Work
           </button>
