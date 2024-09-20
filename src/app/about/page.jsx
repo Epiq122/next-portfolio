@@ -1,8 +1,11 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
+import { useRef } from 'react';
 import Brain from '@/components/brain';
 const About = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({ container: containerRef });
   return (
     <motion.div
       className='h-full'
@@ -11,7 +14,7 @@ const About = () => {
       transition={{ duration: 1 }}
     >
       {/* container */}
-      <div className='h-full overflow-scroll lg:flex'>
+      <div className='h-full overflow-scroll lg:flex' ref={containerRef}>
         {/* TEXT CONTAINER */}
         <div className='p-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0 xl:1/2'>
           {/* BIOGRAPHY */}
@@ -216,8 +219,8 @@ const About = () => {
           </div>
         </div>
         {/* SVG CONTAINER */}
-        <div className='hidden lg:block w-1/3 xl:1/2'>
-          <Brain />
+        <div className='hidden lg:block w-1/3 xl:1/2 sticky top-0 z-30'>
+          <Brain scrollYProgress={scrollYProgress} />
         </div>
       </div>
     </motion.div>
