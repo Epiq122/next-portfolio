@@ -10,7 +10,7 @@ const Portfolio = () => {
       animate={{ y: 0 }}
       transition={{ duration: 1 }}
     >
-      Portfolio
+      Portfoli
     </motion.div>
   );
 };
