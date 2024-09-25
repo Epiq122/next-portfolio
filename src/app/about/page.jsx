@@ -1,11 +1,17 @@
 'use client';
 
-import { motion, useScroll } from 'framer-motion';
+import { motion, useInView, useScroll } from 'framer-motion';
 import { useRef } from 'react';
 import Brain from '@/components/brain';
 const About = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({ container: containerRef });
+  const skillRef = useRef(null);
+  const isSkillRefInView = useInView(skillRef, { margin: '-100px' });
+
+  const experienceRef = useRef(null);
+  const isExperienceRefInView = useInView(experienceRef, { margin: '-100px' });
+
   return (
     <motion.div
       className='h-full'
@@ -49,10 +55,21 @@ const About = () => {
             </motion.svg>
           </div>
           {/* SKILLS */}
-          <div className='flex flex-col gap-12 justify-center'>
-            <h1 className='font-bold text-2xl'>SKILLS</h1>
+          <div className='flex flex-col gap-12 justify-center' ref={skillRef}>
+            <motion.h1
+              initial={{ x: '-300px' }}
+              animate={isSkillRefInView ? { x: 0 } : { x: '-300px' }}
+              transition={{ delay: 0.2 }}
+              className='font-bold text-2xl'
+            >
+              SKILLS
+            </motion.h1>
             {/* skill list */}
-            <div className='flex gap-4 flex-wrap'>
+            <motion.div
+              className='flex gap-4 flex-wrap'
+              initial={{ x: '-300px' }}
+              animate={isSkillRefInView ? { x: 0 } : {}}
+            >
               <div className='rounded p-2 bg-black text-sm cursor-pointer text-white  hover:bg-white hover:text-black'>
                 HTML
               </div>
@@ -89,7 +106,7 @@ const About = () => {
               <div className='rounded p-2 bg-black text-sm cursor-pointer text-white  hover:bg-white hover:text-black'>
                 Spring Boot
               </div>
-            </div>
+            </motion.div>
             {/* skill scroll */}
             <motion.svg
               initial={{ opacity: 0.2, y: 0 }}
@@ -115,10 +132,23 @@ const About = () => {
             </motion.svg>
           </div>
           {/* EXPERIENCE */}
-          <div className='flex flex-col gap-12 justify-center pb-48 '>
-            <h1 className='font-bold text-2xl'>EXPERIENCE</h1>
+          <div
+            className='flex flex-col gap-12 justify-center pb-48 '
+            ref={experienceRef}
+          >
+            <motion.h1
+              className='font-bold text-2xl'
+              initial={{ x: '-300px' }}
+              animate={isExperienceRefInView ? { x: 0 } : { x: '-300px' }}
+              transition={{ delay: 0.2 }}
+            >
+              EXPERIENCE
+            </motion.h1>
             {/* EXPERIENCE LIST */}
-            <div>
+            <motion.div
+              initial={{ x: '-300px' }}
+              animate={isExperienceRefInView ? { x: 0 } : { x: {} }}
+            >
               {/* EXPERIENCE ITEM */}
               <div className='flex justify-between h-48'>
                 {/* left */}
@@ -215,7 +245,7 @@ const About = () => {
                 {/* right */}
                 <div className='w-1/3'></div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
         {/* SVG CONTAINER */}
