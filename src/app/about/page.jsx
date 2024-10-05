@@ -26,10 +26,7 @@ const About = () => {
           {/* BIOGRAPHY */}
           <div className='flex flex-col gap-12 justify-center'>
             <h1 className='font-bold text-2xl'>BIOGRAPHY</h1>
-            <p className='text-lg'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              quos.
-            </p>
+            <p className='text-lg'>My name is Robert Gleason</p>
 
             <motion.svg
               initial={{ opacity: 0.2, y: 0 }}
