@@ -33,8 +33,7 @@ const About = () => {
               customers and creating solutions to better ther life or make there
               vision come to life. I have always wanted to do something with
               computers and now I want to apply the same need to build something
-              In the digital world and help businesses with modern web
-              solutions.
+              In the digital world and help businesses with modern web solutions
             </p>
 
             <motion.svg
