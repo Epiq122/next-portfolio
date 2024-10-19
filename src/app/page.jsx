@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Homepage = () => {
   return (
@@ -28,15 +29,22 @@ const Homepage = () => {
             projects. And help your business with a modern online presence.
           </p>
           {/* BUTTONS */}
-          <div className='flex gap-4 w-fu'>
-            <button className='p-4 rounded-lg ring-1 ring-black bg-black text-white'>
+          <div className='flex gap-4 w-full'>
+            <Link
+              href='/portfolio'
+              className='p-4 rounded-lg ring-1 ring-black bg-black text-white transition-colors duration-300 hover:bg-gray-800'
+            >
               View My Work
-            </button>
-            <button className='p-4 rounded-lg ring-1 ring-black  text-black'>
+            </Link>
+            <Link
+              href='/contact'
+              className='p-4 rounded-lg ring-1 ring-black text-black transition-colors duration-300 hover:bg-gray-200'
+            >
               Contact Me
-            </button>
+            </Link>
           </div>
         </div>
+        `
       </div>
     </motion.div>
   );
