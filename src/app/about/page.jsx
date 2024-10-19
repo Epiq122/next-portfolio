@@ -26,7 +26,6 @@ const About = () => {
           {/* BIOGRAPHY */}
           <div className='flex flex-col gap-12 justify-center'>
             <h1 className='font-bold text-2xl'>BIOGRAPHY</h1>
-<<<<<<< HEAD
             <p className='text-lg'>
               I am Robert Gleason (Rob), a developer living in Vancouver,Bc,
               making a transition from the trades world to web development,
@@ -37,9 +36,6 @@ const About = () => {
               In the digital world and help businesses with modern web
               solutions.
             </p>
-=======
-            <p className='text-lg'>My name is Robert Gleason</p>
->>>>>>> 04539f37e29e05e041b4dc41d859a7d137c732a8
 
             <motion.svg
               initial={{ opacity: 0.2, y: 0 }}
