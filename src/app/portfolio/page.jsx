@@ -8,10 +8,11 @@ const items = [
   {
     id: 1,
     color: 'from-red-300 to-blue-300',
-    title: 'React Commerce',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
-    img: 'https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
-    link: 'https://lama.dev',
+    title: 'Ebook-Landing-Page',
+    desc: 'This is a fake ebook landing page created with Svelte and uses Stripe payment and Sendgrid email service, the project showcases the use of Svelte and its ecosystem.',
+    img: 'https://images.pexels.com/photos/28948225/pexels-photo-28948225/free-photo-of-hand-holding-e-reader-displaying-text-on-yellow-background.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    link: 'https://product-landing-bbwm.vercel.app/',
+    github: 'https://github.com/Epiq122/product-landing',
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ const items = [
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
     img: 'https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
     link: 'https://lama.dev',
+    github: '',
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ const items = [
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
     img: 'https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
     link: 'https://lama.dev',
+    github: '',
   },
   {
     id: 4,
@@ -36,6 +39,7 @@ const items = [
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
     img: 'https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     link: 'https://lama.dev',
+    github: '',
   },
 ];
 
@@ -74,11 +78,18 @@ const PortfolioPage = () => {
                   <p className='w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]'>
                     {item.desc}
                   </p>
-                  <Link href={item.link} className='flex justify-end'>
-                    <button className='p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded'>
-                      See Demo
-                    </button>
-                  </Link>
+                  <div className='flex justify-end gap-4'>
+                    <Link href={item.github} className='flex-shrink-0'>
+                      <button className='p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-gray-800 text-white font-semibold rounded transition-colors duration-300 hover:bg-gray-700'>
+                        GitHub
+                      </button>
+                    </Link>
+                    <Link href={item.link} className='flex-shrink-0'>
+                      <button className='p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold rounded transition-colors duration-300 hover:bg-gray-100'>
+                        See Demo
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
