@@ -14,24 +14,6 @@ const items = [
     link: 'https://product-landing-bbwm.vercel.app/',
     github: 'https://github.com/Epiq122/product-landing',
   },
-  // {
-  //   id: 2,
-  //   color: 'from-blue-300 to-violet-300',
-  //   title: '',
-  //   desc: '',
-  //   img: '',
-  //   link: '',
-  //   github: '',
-  // },
-  // {
-  //   id: 3,
-  //   color: 'from-violet-300 to-purple-300',
-  //   title: '',
-  //   desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
-  //   img: 'https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
-  //   link: '',
-  //   github: '',
-  // },
 ];
 
 const PortfolioPage = () => {
