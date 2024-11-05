@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
+import { Mail } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 const ContactPage = () => {
@@ -45,8 +46,8 @@ const ContactPage = () => {
     const suspiciousPatterns = [
       /<script>/i,
       /javascript:/i,
-      /on\w+=/i, // inline event handlers
-      /data:/i, // data URLs
+      /on\w+=/i,
+      /data:/i,
       /vbscript:/i,
       /expression\(/i,
       /url\(/i,
@@ -124,8 +125,8 @@ const ContactPage = () => {
     >
       <div className='h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48'>
         {/* TEXT CONTAINER */}
-        <div className='h-1/2 lg:h-full lg:w-1/2 flex items-center justify-center text-6xl'>
-          <div>
+        <div className='h-1/2 lg:h-full lg:w-1/2 flex flex-col items-center justify-center'>
+          <div className='text-6xl mb-8'>
             {text.split('').map((letter, index) => (
               <motion.span
                 key={index}
@@ -142,6 +143,15 @@ const ContactPage = () => {
             ))}
             😊
           </div>
+
+          {/* Gmail Link */}
+          <a
+            href='mailto:robgleasonjobs122@gmail.com'
+            className='flex items-center gap-2 bg-white text-gray-800 px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 mt-4'
+          >
+            <Mail className='w-5 h-5' />
+            <span className='font-medium'>Email Me Directly</span>
+          </a>
         </div>
 
         <form
@@ -157,7 +167,7 @@ const ContactPage = () => {
                 validationErrors.message ? 'border-red-500' : ''
               }`}
               name='user_message'
-              maxLength={1000} // Limit message length
+              maxLength={1000}
             />
             {validationErrors.message && (
               <span className='text-red-500 text-sm mt-1'>
@@ -174,7 +184,7 @@ const ContactPage = () => {
               className={`bg-transparent border-b-2 border-b-black outline-none ${
                 validationErrors.email ? 'border-red-500' : ''
               }`}
-              maxLength={100} // Limit email length
+              maxLength={100}
             />
             {validationErrors.email && (
               <span className='text-red-500 text-sm mt-1'>
@@ -184,7 +194,7 @@ const ContactPage = () => {
           </div>
 
           <span>Regards</span>
-          <button className='bg-purple-200 rounded font-semibold text-gray-600 p-4'>
+          <button className='bg-purple-200 rounded font-semibold text-gray-600 p-4 hover:bg-purple-300 transition-colors duration-300'>
             Send
           </button>
 
